@@ -29,7 +29,7 @@
                     @foreach ($blog2 as $blog)
                         <tr>                            
                             <td class="text-start">{{ $blog->title}}</td>
-                            <td class="text-start">{{Str::limit($blog->content, 50)}}</td>
+                            <td class="text-start">{{ Str::limit(strip_tags($blog->content), 50) }}</td>
                             <td class="text-start">
                                 @if ($blog->status)
                                     <a href="{{ route('change', $blog->id) }}" class="btn btn-success">เผยแพร่</a>
